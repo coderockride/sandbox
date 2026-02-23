@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Multiplier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 420px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Multiply Two Numbers</h1>
+
+  <label>
+    First number
+    <input id="num1" type="number" step="any" placeholder="Enter first number" />
+  </label>
+
+  <label>
+    Second number
+    <input id="num2" type="number" step="any" placeholder="Enter second number" />
+  </label>
+
+  <button id="multiplyBtn">Multiply</button>
+
+  <p id="result">Result: -</p>
+
+  <script>
+    const num1Input = document.getElementById('num1');
+    const num2Input = document.getElementById('num2');
+    const multiplyBtn = document.getElementById('multiplyBtn');
+    const result = document.getElementById('result');
+
+    multiplyBtn.addEventListener('click', function () {
+      const num1 = Number(num1Input.value);
+      const num2 = Number(num2Input.value);
+
+      if (num1Input.value === '' || num2Input.value === '') {
+        result.textContent = 'Result: Please enter both numbers.';
+        return;
+      }
+
+      result.textContent = 'Result: ' + (num1 * num2);
+    });
+  </script>
+</body>
+</html>
